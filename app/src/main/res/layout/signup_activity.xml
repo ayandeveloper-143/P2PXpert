@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#181a20"
+    android:scrollbars="none"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header with Back Button -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp">
+
+            <ImageButton
+                android:id="@+id/back_from_signup"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="#eaecef" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Create account"
+                    android:textColor="#eaecef"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Join our community today"
+                    android:textColor="#848e9c"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="4dp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Full Name Input -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Full name"
+                android:textColor="#b7bdc6"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/edit_text_transition"
+                android:id="@+id/signup_name_layout"
+                android:layout_height="50dp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    app:tint="#848e9c"
+                    android:src="@drawable/ic_person" />
+
+                <EditText
+                    android:id="@+id/signup_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginEnd="36dp"
+                    android:hint="Enter your full name"
+                    android:inputType="textPersonName"
+                    android:background="@android:color/transparent"
+                    android:textColor="#eaecef"
+                    android:textColorHint="#848e9c"
+                    android:textSize="16sp"
+                    android:padding="0dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/signup_name_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please enter your name"
+                android:textColor="#f6465d"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Email Input -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="#b7bdc6"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/edit_text_transition"
+                android:id="@+id/signup_email_layout"
+                android:layout_height="50dp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    app:tint="#848e9c"
+                    android:src="@drawable/ic_email" />
+
+                <EditText
+                    android:id="@+id/signup_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginEnd="36dp"
+                    android:hint="Enter your email"
+                    android:inputType="textEmailAddress"
+                    android:background="@android:color/transparent"
+                    android:textColor="#eaecef"
+                    android:textColorHint="#848e9c"
+                    android:textSize="16sp"
+                    android:padding="0dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/signup_email_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please enter a valid email"
+                android:textColor="#f6465d"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+
+        <!-- Password Input - MATERIAL PROGRESSBAR -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textColor="#b7bdc6"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/edit_text_transition"
+                android:layout_height="50dp"
+                android:id="@+id/signup_password_layout"
+                android:paddingStart="14dp"
+                >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    app:tint="#848e9c"
+                    android:src="@drawable/ic_lock" />
+
+                <EditText
+                    android:id="@+id/signup_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginEnd="50dp"
+                    android:hint="Create a password"
+                    android:inputType="textPassword"
+                    android:background="@android:color/transparent"
+                    android:textColor="#eaecef"
+                    android:textColorHint="#848e9c"
+                    android:textSize="16sp"
+                    android:padding="0dp" />
+
+                <ImageButton
+                    android:id="@+id/toggle_signup_password"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_eye"
+                     />
+            </RelativeLayout>
+
+            <!-- Password Strength Meter - MATERIAL PROGRESSBAR -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/password_strength_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Password strength"
+                    android:textColor="#848e9c"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="4dp" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/password_strength_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:max="100"
+                    android:progress="0"
+                    app:trackThickness="6dp"
+                    app:trackCornerRadius="4dp"
+                    app:showAnimationBehavior="inward"
+                    app:hideAnimationBehavior="outward"
+                    app:indicatorColor="#f6465d"
+                    app:indicatorTrackGapSize="0dp"
+                    app:trackStopIndicatorSize="0dp"
+                    app:trackColor="#1e2329"
+                    app:indicatorDirectionLinear="leftToRight" />
+
+
+                <TextView
+                    android:id="@+id/password_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Use 8+ characters with letters, numbers &amp; symbols"
+                    android:textColor="#848e9c"
+                    android:textSize="12sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/signup_password_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password must be at least 8 characters"
+                android:textColor="#f6465d"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Confirm Password Input -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirm password"
+                android:textColor="#b7bdc6"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/edit_text_transition"
+                android:layout_height="50dp"
+                android:id="@+id/signup_confirm_password_layout"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    app:tint="#848e9c"
+                    android:src="@drawable/ic_lock" />
+
+                <EditText
+                    android:id="@+id/signup_confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginEnd="36dp"
+                    android:hint="Confirm your password"
+                    android:inputType="textPassword"
+                    android:background="@android:color/transparent"
+                    android:textColor="#eaecef"
+                    android:textColorHint="#848e9c"
+                    android:textSize="16sp"
+                    android:padding="0dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/signup_confirm_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Passwords don't match"
+                android:textColor="#f6465d"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- terms and conditions -->
+
+        <CheckBox
+            android:id="@+id/terms_conditions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Terms and conditions"
+            android:checked="false"
+            android:layout_marginBottom="10dp"
+            android:textColor="#eaecef"
+            app:buttonTint="?attr/colorPrimary"
+            app:useMaterialThemeColors="true" />
+
+
+        <!-- Create Account Button -->
+        <Button
+            android:id="@+id/signup_btn"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Create account"
+            android:textColor="#181a20"
+            android:background="@drawable/btn_yellow_rounded"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+</ScrollView>

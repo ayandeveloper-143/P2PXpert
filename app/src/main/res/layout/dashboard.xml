@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#181a20"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/refreshHeader"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="#181a20"
+        android:visibility="visible">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/circular_progress"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:indeterminateTrackVisible="true"
+            app:indicatorColor="#f0b90b"
+            app:indicatorSize="38dp"
+            app:trackCornerRadius="3dp"
+            app:trackThickness="5dp"
+            app:waveAmplitude="2dp"
+            app:wavelength="12dp" />
+
+        <ImageView
+            android:id="@+id/checkIcon"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_check_24"
+            app:tint="#f0b90b"
+            />
+
+
+    </LinearLayout>
+
+    <!-- Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="60dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:background="#181a20"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#181a20">
+
+            <!-- Dashboard Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="24dp">
+
+                <!-- Logo and Title -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/app_logo"
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="P2PXpress Logo"
+                        android:src="@drawable/logo" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/dashboard_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="P2PXpert"
+                            android:textColor="#eaecef"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/subtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No limits, no banks, Private"
+                            android:textColor="#848e9c"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Header Actions -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Support Button -->
+                    <ImageButton
+                        android:id="@+id/support_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_headset"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:tint="#eaecef"
+                        android:layout_marginEnd="8dp" />
+
+                    <!-- Notifications Button -->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:id="@+id/notifications_btn"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_bell"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:tint="#eaecef" />
+
+                        <!-- Notification Badge - Fixed -->
+                        <TextView
+                            android:id="@+id/notification_badge"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:text="3"
+                            android:textSize="10sp"
+                            android:textColor="@android:color/white"
+                            android:gravity="center"
+                            android:background="@drawable/badge_background"
+                            android:layout_alignTop="@id/notifications_btn"
+                            android:layout_alignEnd="@id/notifications_btn"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginEnd="2dp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Balance Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="#1e2329"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/balance_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Asset Balance"
+                        android:textColor="#848e9c"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/total_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$12,845.32"
+                        android:textColor="#eaecef"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/btc_equivalent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="≈ 0.382 INR"
+                        android:textColor="#b7bdc6"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Market Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <!-- Section Title with Live Animation -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="14dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Market Prices"
+                        android:textColor="#eaecef"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Live Indicator with Animation -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/live_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Live"
+                            android:textColor="#f0b90b"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:id="@+id/live_indicator"
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:background="@drawable/live_badge"
+                            android:layout_marginStart="4dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Market Cards Grid -->
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:rowCount="2"
+                    android:alignmentMode="alignBounds"
+                    android:columnOrderPreserved="false"
+                    android:useDefaultMargins="true"
+                    android:columnWidth="0dp">
+
+                    <!-- BTC Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:layout_margin="4dp"
+                        android:layout_marginLeft="0dp"
+                        app:cardBackgroundColor="#1e2329"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:background="?attr/selectableItemBackground">
+
+                            <!-- Coin Header -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="12dp">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:src="@drawable/bitcoin"
+                                    android:layout_marginEnd="8dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="BTC"
+                                    android:textColor="#eaecef"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/btc_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$33,628.45"
+                                android:textColor="#02c076"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="6dp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:src="@drawable/ic_caret_up"
+                                    android:tint="#02c076" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2.34%"
+                                    android:textColor="#02c076"
+                                    android:textSize="12sp"
+                                    android:layout_marginStart="4dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- ETH Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="#1e2329"
+                        app:cardCornerRadius="12dp"
+                        android:layout_marginRight="0dp"
+                        app:cardElevation="2dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:background="?attr/selectableItemBackground">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="12dp">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:src="@drawable/ethereum"
+                                    android:layout_marginEnd="8dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="ETH"
+                                    android:textColor="#eaecef"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/eth_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$1,842.76"
+                                android:textColor="#f6465d"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="6dp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:src="@drawable/ic_caret_down"
+                                    android:tint="#f6465d" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1.12%"
+                                    android:textColor="#f6465d"
+                                    android:textSize="12sp"
+                                    android:layout_marginStart="4dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- USDT Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:layout_margin="4dp"
+                        android:layout_marginLeft="0dp"
+                        app:cardBackgroundColor="#1e2329"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:background="?attr/selectableItemBackground">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="12dp">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:src="@drawable/usdt"
+                                    android:layout_marginEnd="8dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="USDT"
+                                    android:textColor="#eaecef"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/usdt_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="₹93.00"
+                                android:textColor="#02c076"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="6dp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:src="@drawable/ic_caret_up"
+                                    android:tint="#02c076" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0.01%"
+                                    android:textColor="#02c076"
+                                    android:textSize="12sp"
+                                    android:layout_marginStart="4dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- BNB Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:layout_margin="4dp"
+                        android:layout_marginRight="0dp"
+                        app:cardBackgroundColor="#1e2329"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:background="?attr/selectableItemBackground">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="12dp">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:src="@drawable/bnb"
+                                    android:layout_marginEnd="8dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="BNB"
+                                    android:textColor="#eaecef"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/bnb_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$305.75"
+                                android:textColor="#f6465d"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="6dp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:src="@drawable/ic_caret_down"
+                                    android:tint="#f6465d" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0.45%"
+                                    android:textColor="#f6465d"
+                                    android:textSize="12sp"
+                                    android:layout_marginStart="4dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </GridLayout>
+
+            </LinearLayout>
+
+            <!-- Banner Carousel Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Featured"
+                    android:textColor="#eaecef"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Banner Carousel - FIXED -->
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/bannerViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginBottom="8dp" />
+
+            </LinearLayout>
+
+            <!-- USDT Price Trend Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <!-- Trades Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="USDT Price Trend"
+                        android:textColor="#eaecef"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Live Indicator -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/trend_live_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Live"
+                            android:textColor="#f0b90b"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:id="@+id/trend_live_indicator"
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:background="@drawable/live_badge"
+                            android:layout_marginStart="4dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- WebView for USDT Chart -->
+                <WebView
+                    android:id="@+id/usdtChartWebView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="#1e2329"
+                    android:padding="8dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>

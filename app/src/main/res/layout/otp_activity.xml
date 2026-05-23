@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#181a20"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- App Logo -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="58dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="32dp"
+            android:contentDescription="P2PXpress Logo"
+            android:src="@drawable/logo" />
+
+        <!-- Header with Back Button -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Pehla Layout - Back aur Title -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp">
+
+                    <ImageButton
+                        android:id="@+id/back_btn_otp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_arrow_back"
+                        android:tint="#eaecef" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Verify OTP"
+                        android:textColor="#eaecef"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                </RelativeLayout>
+
+                <!-- Dusra Layout - Logo aur Description -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="32dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="We sent a 6-digit code to your registered email and phone"
+                        android:textColor="#848e9c"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:lineSpacingExtra="4dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <!-- OTP Input Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp">
+
+            <!-- OTP Boxes -->
+            <LinearLayout
+                android:id="@+id/otp_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:weightSum="6">
+
+                <EditText
+                    android:id="@+id/otp_1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/otp_box_background"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="#eaecef"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/otp_2"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/otp_box_background"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="#eaecef"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/otp_3"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/otp_box_background"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="#eaecef"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/otp_4"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/otp_box_background"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="#eaecef"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/otp_5"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/otp_box_background"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="#eaecef"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/otp_6"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/otp_box_background"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="#eaecef"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Error Message -->
+            <TextView
+                android:id="@+id/otp_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please enter the 6-digit code"
+                android:textColor="#f6465d"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Verify Button -->
+
+        <Button
+            android:id="@+id/verify_otp_btn"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Verify"
+            android:textColor="#181a20"
+            android:background="@drawable/btn_yellow_rounded"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:minHeight="0dp"
+            android:minWidth="0dp" />
+
+        <!-- Resend Link -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Didn't receive code? "
+                android:textColor="#848e9c"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/resend_otp_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resend code"
+                android:textColor="#f0b90b"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:textSize="14sp"
+                android:paddingStart="5dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

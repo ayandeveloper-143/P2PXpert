@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#181a20">
+
+    <!-- Splash -->
+    <include layout="@layout/splash"
+        android:id="@+id/splash_screen"
+        android:visibility="visible" />
+
+    <!-- Login Screen -->
+    <include
+        android:id="@+id/login_screen"
+        layout="@layout/login_activity"
+        android:visibility="gone" />
+
+    <!-- Signup Screen -->
+    <include layout="@layout/signup_activity"
+        android:id="@+id/signup_screen"
+        android:visibility="gone" />
+
+    <!-- forget Screen -->
+    <include layout="@layout/forget_activity"
+        android:id="@+id/forget_screen"
+        android:visibility="gone" />
+
+    <!-- OTP Screen -->
+    <include layout="@layout/otp_activity"
+        android:id="@+id/otp_screen"
+        android:visibility="gone" />
+
+    <!-- Change Password Screen -->
+    <include layout="@layout/change_password_activity"
+        android:id="@+id/change_password_screen"
+        android:visibility="gone" />
+
+</FrameLayout>

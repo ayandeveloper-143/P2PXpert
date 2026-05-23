@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="25dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/circular_progress"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:indeterminate="true"
+        app:indicatorColor="#f0b90b"
+        app:indeterminateTrackVisible="true"
+        app:trackCornerRadius="3dp"
+        app:trackThickness="5dp"
+        app:indicatorSize="38dp"
+        app:waveAmplitude="2dp"
+        app:wavelength="12dp" />
+
+
+</LinearLayout>

@@ -1,0 +1,4 @@
+<!-- res/color/bottom_nav_ripple.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="#1AF0B90B"/> <!-- yellow ripple with opacity -->
+</selector>

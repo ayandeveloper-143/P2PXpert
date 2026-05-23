@@ -1,0 +1,10 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/ic_eye">
+
+    <target
+        android:name="slash"
+        android:animation="@animator/slash_draw_animator" />
+    <target
+        android:name="slash_shadow"
+        android:animation="@animator/slash_draw_animator" />
+</animated-vector>

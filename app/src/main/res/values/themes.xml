@@ -1,0 +1,32 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.MyApplication" parent="Theme.Material3.Dark.NoActionBar">
+
+
+        <item name="colorPrimary">#f0b90b</item>
+        <item name="colorOnPrimary">#181a20</item>
+
+        <item name="colorSurface">#1e2329</item>
+        <item name="colorOnSurface">#ffffff</item>
+        <item name="android:windowBackground">#181a20</item>
+
+        <item name="colorPrimaryContainer">#2b3139</item>
+        <item name="colorOnPrimaryContainer">#f0b90b</item>
+
+
+        <item name="android:statusBarColor">#181a20</item>
+        <item name="android:navigationBarColor">#181a20</item>
+
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+
+    </style>
+    <style name="NoTintButtonTheme" parent="ThemeOverlay.Material3">
+        <item name="colorPrimary">#2b3139</item>
+        <item name="colorOnPrimary">#181a20</item>
+        <item name="colorSurface">?android:colorBackground</item>
+        <item name="colorControlHighlight">@android:color/transparent</item>
+    </style>
+
+
+</resources>
