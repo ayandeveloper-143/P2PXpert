@@ -33,7 +33,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var refreshDashboardController: PullToRefreshController
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        super.onCreate(savedInstanceState)  
         setContentView(R.layout.main_activity)
 
         autoScrollHandler = Handler(Looper.getMainLooper())
